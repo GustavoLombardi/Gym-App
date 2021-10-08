@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gym/screens/emissao_senha.dart';
 import 'package:gym/screens/perfil.dart';
 import 'package:gym/screens/treinos.dart';
 
@@ -128,10 +129,14 @@ class _HomePageState extends State<HomePage> {
                     
                 
                   ),
-                  const HomeCard(
+                   HomeCard(
                     image: "assets/images/senha.png",
                     title: "Emite Senha",
                     isActive: true,
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => EmissaoSenha()));
+                    },
                   ),
                   HomeCard(
                     image: "assets/images/perfil.png",

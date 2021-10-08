@@ -34,7 +34,7 @@ class _PerfilState extends State<Perfil> {
                   child: Column(children: [
                     CircleAvatar(
                       radius: 90,
-                      backgroundColor: Colors.blue,
+                      backgroundColor: Colors.black,
                       child: Image.asset('assets/images/home1.png'),
                     ),
                     const SizedBox(

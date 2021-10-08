@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 const yourLibrary = [
   'A',
   'B',
@@ -157,3 +159,38 @@ const lofihiphopPlaylist = Playlist(
   followers: '5,351,685',
   songs: _lofihiphopMusic,
 );
+
+ class DataLists {
+  List<ListTile> lists = [
+    ListTile(
+      leading: Text('Tile Leading 1'),
+      title: Text('Tile Title 1'),
+      subtitle: Text('Tile Subtitle 1'),
+      trailing: Text('Tile Trailing 1'),
+    ),
+    ListTile(
+      leading: Text('Tile Leading 2'),
+      title: Text('Tile Title 2'),
+      subtitle: Text('Tile Subtitle 2'),
+      trailing: Text('Tile Trailing 2'),
+    ),
+    ListTile(
+      leading: Text('Tile Leading 3'),
+      title: Text('Tile Title 3'),
+      subtitle: Text('Tile Subtitle 3'),
+      trailing: Text('Tile Trailing 3'),
+    ),
+    ListTile(
+      leading: Text('Tile Leading 4'),
+      title: Text('Tile Title 4'),
+      subtitle: Text('Tile Subtitle 4'),
+      trailing: Text('Tile Trailing 4'),
+    ),
+    ListTile(
+      leading: Text('Tile Leading 5'),
+      title: Text('Tile Title 5'),
+      subtitle: Text('Tile Subtitle 5'),
+      trailing: Text('Tile Trailing 5'),
+    ),
+  ];
+}

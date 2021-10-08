@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gym/data/data.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:gym/screens/treinos_details.dart';
 
 class Treino extends StatefulWidget {
   final Playlist? playlist;
@@ -27,13 +28,16 @@ class _TreinoState extends State<Treino> {
       body: InkWell(
         child: Column(
           children: [
-            Column(children: const [
+            Column(children:  [
               SizedBox(
                 height: 40,
               ),
-              TreinoCard(title:  'Treino A', details: 'Biceps', professor: 'Fernando', data: '02/09/2021' , image: 'assets/images/biceps.png',),
-              TreinoCard(title:  'Treino B', details: 'Triceps', professor: 'Igor',data: '08/10/2021 ',image: 'assets/images/home1.png'),
-              TreinoCard(title:  'Treino C', details: 'Perna', professor: 'Fernando',data: '05/09/2021',image: 'assets/images/legs.png'),
+              TreinoCard(title:  'Treino A', details: 'Biceps', professor: 'Fernando', data: '02/09/2021' , image: 'assets/images/biceps.png',onTap: (){ Navigator.push(context,
+                          MaterialPageRoute(builder: (context) =>  DetalhesTreino(title: 'Treino A')));},),
+              TreinoCard(title:  'Treino B', details: 'Triceps', professor: 'Igor',data: '08/10/2021 ',image: 'assets/images/home1.png' ,onTap: (){ Navigator.push(context,
+                          MaterialPageRoute(builder: (context) =>  DetalhesTreino(title: 'Treino B')));},),
+              TreinoCard(title:  'Treino C', details: 'Perna', professor: 'Fernando',data: '05/09/2021',image: 'assets/images/legs.png', onTap: (){ Navigator.push(context,
+                          MaterialPageRoute(builder: (context) =>  DetalhesTreino(title: 'Treino C')));},),
             ]),
           ],
         ),
@@ -73,7 +77,7 @@ class TreinoCard extends StatelessWidget {
             ),
             child: Stack(
               children: <Widget>[
-                CardTreinos(title: title, details: details, professor: professor, data: data,),
+                CardTreinos(title: title, details: details, professor: professor, data: data, onTap: onTap,),
                 PhotoCard(image: image,),
               ],
             )));
@@ -99,7 +103,7 @@ class PhotoCard extends StatelessWidget {
   alignment: FractionalOffset.centerLeft,
   child: CircleAvatar(
     radius: 40,
-    backgroundColor: Colors.grey,
+    backgroundColor: Colors.white,
     child: Image.asset(
       image.toString(),
       width: 92,
@@ -149,36 +153,39 @@ class CardTreinos extends StatelessWidget {
     ],
     
   ),
-  child: Container(
-        margin: const EdgeInsets.only(top: 16.0, left: 72.0),
-        constraints:  const BoxConstraints.expand(),
-        child:  Column( 
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-             Text(title.toString() ,style: const TextStyle(color: Colors.white)),
-             Text(details.toString(), style: const TextStyle(color: Colors.white)),
-             Container(
-              color: const Color(0xFF00C6FF),
-              width: 24.0,
-              height: 1.0,
-              margin: const EdgeInsets.symmetric(vertical: 8.0)
-            ),
-             Row(
-              children: <Widget>[
-                 const Icon(Icons.person, size: 14.0,
-                  color: Colors.white),
-                 Text(
-                 professor.toString(), style: const TextStyle(color: Colors.white)),
-                 Container(width: 24.0),
-                const  Icon(Entypo.clock, size: 14.0,
-                  color: Colors.white),
-                 Text(
-                  data.toString(), style: const TextStyle(color: Colors.white)),
-              ],
-            )
-          ],
+  child: InkWell(
+    child: Container(
+          margin: const EdgeInsets.only(top: 16.0, left: 72.0),
+          constraints:  const BoxConstraints.expand(),
+          child:  Column( 
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+               Text(title.toString() ,style: const TextStyle(color: Colors.white)),
+               Text(details.toString(), style: const TextStyle(color: Colors.white)),
+               Container(
+                color: const Color(0xFF00C6FF),
+                width: 24.0,
+                height: 1.0,
+                margin: const EdgeInsets.symmetric(vertical: 8.0)
+              ),
+               Row(
+                children: <Widget>[
+                   const Icon(Icons.person, size: 14.0,
+                    color: Colors.white),
+                   Text(
+                   professor.toString(), style: const TextStyle(color: Colors.white)),
+                   Container(width: 24.0),
+                  const  Icon(Entypo.clock, size: 14.0,
+                    color: Colors.white),
+                   Text(
+                    data.toString(), style: const TextStyle(color: Colors.white)),
+                ],
+              )
+            ],
+          ),
         ),
-      ),
+        onTap: onTap,
+  ),
 )
     );
 
