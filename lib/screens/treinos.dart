@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:gym/data/data.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:gym/screens/treinos_details.dart';
 
 class Treino extends StatefulWidget {
-  final Playlist? playlist;
-  const Treino({Key? key, this.playlist}) : super(key: key);
+ 
+  const Treino({Key? key,}) : super(key: key);
 
   @override
   _TreinoState createState() => _TreinoState();

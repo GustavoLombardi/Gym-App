@@ -49,7 +49,7 @@ class EmissaoSenha extends StatelessWidget {
                                                     color: Colors.black,
                                                     fontWeight:
                                                         FontWeight.bold)),
-                                            Text('28',
+                                            Text('20',
                                                 style: TextStyle(
                                                     color: Colors.black,
                                                     fontWeight:
@@ -58,7 +58,7 @@ class EmissaoSenha extends StatelessWidget {
                                         ),
                                       ]),
                                   const Text(
-                                    'FERNANDO, TODOS',
+                                    'JOÃO, TODOS',
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold),
@@ -67,26 +67,38 @@ class EmissaoSenha extends StatelessWidget {
                           ),
                           onTap: () {
                             Get.defaultDialog(
-                              title: "Confirmar emissão de senha?",
-                              
-                             
-                              backgroundColor: Colors.black87,
-                              titleStyle: const TextStyle(color: Colors.white),
-                              confirmTextColor: Colors.white,
-                              cancelTextColor: Colors.white,
-                              
-                              middleTextStyle: const TextStyle(color: Colors.black),
-                              buttonColor: Colors.black,
-                              textConfirm: 'Confirmar',
-                              textCancel: 'Voltar',
-                             onConfirm: (){
-                              
-                             },
-                              onCancel: (){
+                                title: "Confirmar emissão de senha?",
+                                backgroundColor: Colors.black87,
+                                titleStyle:
+                                    const TextStyle(color: Colors.white),
+                                confirmTextColor: Colors.white,
+                                cancelTextColor: Colors.white,
+                                middleTextStyle:
+                                    const TextStyle(color: Colors.black),
+                                buttonColor: Colors.black,
+                                textConfirm: 'Confirmar',
+                                textCancel: 'Voltar',
+                                onConfirm: () {
+                                  Get.back();
+                                  Get.defaultDialog(
+                                    title: "Senha emitida com sucesso",
+                                    backgroundColor: Colors.black87,
+                                    titleStyle:
+                                        const TextStyle(color: Colors.white),
+                                    confirmTextColor: Colors.white,
+                                    cancelTextColor: Colors.white,
+                                    middleTextStyle:
+                                        const TextStyle(color: Colors.black),
+                                    buttonColor: Colors.black,
+                                    textConfirm: 'OK',
+                                    onConfirm: () {
+                                      Get.back();
+                                    }
 
-                              }
-                        );
-                            
+                                  );
+                                  
+                                },
+                                onCancel: () {});
                           },
                         ),
                       ],

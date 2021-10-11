@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(
                     width: 5,
                   ),
-                  const Text('AGIT SPORTCENTER LTDA-EPP')
+                  const Text('Academia')
                 ],
               ),
             ),

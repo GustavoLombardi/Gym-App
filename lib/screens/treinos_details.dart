@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:gym/data/data.dart';
 import 'package:gym/data/dummy_data.dart';
 import 'package:gym/data/treino_data.dart';
-import 'package:gym/screens/teste.dart';
+
 
 class DetalhesTreino extends StatelessWidget {
   final String? title;
@@ -16,17 +15,22 @@ class DetalhesTreino extends StatelessWidget {
         appBar: AppBar(
           title: Text(title.toString()),
           backgroundColor: Colors.black,
-        ),
+          leading: IconButton(
+            onPressed: () {
+             
+            }, icon: const Icon(AntDesign.arrowleft)),
+      ),
+      
         body: Padding(
           padding: const EdgeInsets.all(10),
           child: ListView.separated(
             separatorBuilder: (context, index) {
-              return Divider();
+              return const Divider();
             },
             itemCount: loadedProducts.length,
             itemBuilder: (ctx, i) => Stack(
               children: <Widget>[
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 CardTreinos(title: loadedProducts[i].title,details:loadedProducts[i].description, series: loadedProducts[i].series,),
                 PhotoCard(image: loadedProducts[i].imageUrl,),
               ],
@@ -56,7 +60,7 @@ class PhotoCard extends StatelessWidget {
        radius: 40,
        backgroundColor: Colors.white60,
        child: Image.asset(
-        'assets/images/home1.png',
+        image.toString(),
         width: 92,
         height: 92,
        ),
@@ -126,10 +130,10 @@ class CardTreinos extends StatelessWidget {
                    Text(
                    series.toString(), style: const TextStyle(color: Colors.black)),
                    Container(width: 24.0),
-                  const  Icon(Icons.person, size: 14.0,
-                    color: Colors.black),
-                   Text(
-                    data.toString(), style: const TextStyle(color: Colors.black)),
+               //  const  Icon(Icons.person, size: 14.0,
+               //    color: Colors.black),
+               //   Text(
+               //    data.toString(), style: const TextStyle(color: Colors.black)),
                 ],
               )
             ],
